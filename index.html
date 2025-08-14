@@ -4,63 +4,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Healthcare Portfolio — Fatima Suleiman</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
-    .card { background: #fff; padding: 20px; border-radius: 10px; max-width: 800px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    h1, h2 { color: #333; }
-    .avatar-wrap { position: relative; width: 100px; height: 100px; margin-bottom: 20px; }
-    .halo::before { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 4px rgba(52,211,153,.22), 0 0 60px 12px rgba(20,184,166,.2); animation: breathe 4s ease-in-out infinite; }
-    @keyframes breathe { 0%,100% { transform: scale(0.95); opacity: .88; } 50% { transform: scale(1.06); opacity: 1; } }
-    .avatar { width: 100px; height: 100px; position: relative; z-index: 1; }
-    .list { margin-top: 10px; }
-    .list div { margin-bottom: 8px; }
-    .btn { padding: 8px 12px; margin: 5px 0; border: none; border-radius: 6px; cursor: pointer; }
-    .btn.email { background: #16a34a; color: white; }
-    .btn.whatsapp { background: #14b8a6; color: white; }
+    :root{
+      --bg:#0f172a;
+      --card:#111827cc;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#22c55e;
+      --accent-2:#14b8a6;
+      --ring:#34d399;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 1200px at 100% 0%, rgba(20,184,166,.25) 0%, transparent 45%),
+      radial-gradient(1000px 1000px at 0% 100%, rgba(34,197,94,.2) 0%, transparent 40%), var(--bg);
+      color:var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+    }
+    .container{max-width:1120px; margin:0 auto; padding:24px}
+    .card{background:linear-gradient(180deg, rgba(17,24,39,.85), rgba(2,6,23,.85)); border:1px solid rgba(148,163,184,.12); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .card h2{margin:0 0 12px 0; font-size:clamp(18px,2.2vw,22px)}
+    .muted{color:var(--muted)}
+    .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .chip{padding:6px 10px; border-radius:999px; background:#0b1220; border:1px solid rgba(148,163,184,.18); color:#cbd5e1; font-size:13px}
+    .hero{display:flex; gap:18px; align-items:center}
+    .avatar-wrap{position:relative; width:92px; height:92px}
+    .halo{position:absolute; inset:0; display:grid; place-items:center;}
+    .halo::before{content:""; width:100%; height:100%; border-radius:999px; box-shadow:0 0 0 4px rgba(52,211,153,.22), 0 0 60px 12px rgba(20,184,166,.2);
+      animation: breathe 4s ease-in-out infinite; transform-origin:center;}
+    @keyframes breathe{0%,100%{transform:scale(0.95); opacity:.88}50%{transform:scale(1.06); opacity:1}}
+    .avatar{position:relative; z-index:1; width:92px; height:92px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
+    .btn{appearance:none; border:0; border-radius:14px; padding:10px 14px; font-weight:600; cursor:pointer; color:#0b1220; background:white; box-shadow:0 8px 20px rgba(0,0,0,.18)}
+    .btn.secondary{background:transparent; color:#e2e8f0; border:1px solid rgba(148,163,184,.3)}
+    .list{display:grid; gap:12px}
+    .item{padding:14px; border-radius:16px; border:1px dashed rgba(148,163,184,.25); background:rgba(2,6,23,.5)}
+    footer{margin:30px 0 10px; color:#94a3b8; font-size:13px; text-align:center}
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="avatar-wrap halo">
-      <svg class="avatar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#16a34a"/>
-            <stop offset="100%" stop-color="#14b8a6"/>
-          </linearGradient>
-        </defs>
-        <circle cx="50" cy="50" r="48" fill="url(#grad)"/>
-        <circle cx="50" cy="38" r="14" fill="rgba(255,255,255,.9)"/>
-        <rect x="26" y="56" width="48" height="24" rx="12" fill="rgba(255,255,255,.9)"/>
-        <text x="50" y="53" text-anchor="middle" font-size="22" font-weight="700" fill="#0b1220">FS</text>
-      </svg>
-    </div>
-    <h1>Fatima Suleiman</h1>
-    <p><strong>Email:</strong> <button class="btn email" onclick="window.location.href='mailto:fatima.suleiman@example.com'">Send Email</button></p>
-    <p><strong>WhatsApp:</strong> <button class="btn whatsapp" onclick="window.open('https://wa.me/2349038936961')">Chat on WhatsApp</button></p>
-    <p><strong>School:</strong> Alma'arif College Of Nursing Midwefery And Health Sciences</p>
-    <p><strong>Course:</strong> Community Health Extension Workers (CHEW)</p>
-    <p><strong>Expected Graduation:</strong> 30/08/2025</p>
-    <p><strong>Professional Title:</strong> RCHP</p><h2>Profile & Bio</h2>
-<div class="list">
-  <div><strong>Short Bio:</strong> Compassionate and detail‑oriented community health trainee passionate about preventive care and maternal & child health.</div>
-  <div><strong>Career Goals:</strong> Excel in CHEW competencies and later specialize in reproductive & child health promotion across underserved communities.</div>
-</div>
-
-<h2>Academic Achievements</h2>
-<div class="list">
-  <div>Top 5% in Public Health Education (2024 midterms)</div>
-  <div>Led a 1,200‑household malaria net distribution drive</div>
-  <div>Dean’s Recognition for Community Service (2023)</div>
-</div>
-
-<h2>Portfolio</h2>
-<div class="list">
-  <div><strong>Research Projects:</strong> Assessing ANC Attendance in Unguwar Rimi — Surveyed 250 mothers to identify barriers to antenatal clinic utilization. (May 2024)</div>
-  <div><strong>Volunteer Work:</strong> Health Educator at Kumbotso Primary Health Centre (2023–2024)</div>
-  <div><strong>Certifications:</strong> Basic Life Support (BLS), First Aid & CPR, Cold Chain & Vaccine Handling</div>
-  <div><strong>Practical Experience:</strong> Clinical rotation — Maternal & Child Health (12 weeks), Immunization clinic assistant</div>
-</div>
-
+  <div class="container">
+    <section class="grid" style="display:grid;grid-template-columns:1.1fr 1.9fr;gap:24px;">
+      <div class="card">
+        <div class="hero">
+          <div class="avatar-wrap">
+            <div class="halo"></div>
+            <svg class="avatar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#16a34a"/>
+                  <stop offset="100%" stop-color="#14b8a6"/>
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="48" fill="url(#grad)"/>
+              <circle cx="50" cy="38" r="14" fill="rgba(255,255,255,.9)"/>
+              <rect x="26" y="56" width="48" height="24" rx="12" fill="rgba(255,255,255,.9)"/>
+              <text x="50" y="53" text-anchor="middle" font-size="22" font-weight="700" fill="#0b1220">FS</text>
+            </svg>
+          </div>
+          <div>
+            <h2>Fatima Suleiman</h2>
+            <div class="muted">RCHP — Community Health Trainee</div>
+            <div class="row" style="margin-top:10px">
+              <span class="chip">Alma'arif College Of Nursing Midwefery And Health Sciences</span>
+              <span class="chip">Community Health Extension Workers (CHEW)</span>
+              <span class="chip">Graduation: 30/08/2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="window.location.href='mailto:fatima.suleiman@example.com'">Email</button>
+          <button class="btn secondary" onclick="window.open('https://wa.me/2349038936961')">WhatsApp</button>
+        </div>
+        <hr style="border:none;height:1px;background:rgba(148,163,184,.15);margin:16px 0">
+        <h2>Profile & Bio</h2>
+        <div class="list">
+          <div class="item"><strong>Short Bio</strong><span class='muted'> Compassionate and detail‑oriented community health trainee passionate about preventive care and maternal & child health.</span></div>
+          <div class="item"><strong>Career Goals</strong><span class='muted'> Excel in CHEW competencies and later specialize in reproductive & child health promotion across underserved communities.</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Academic Achievements</h2>
+        <div class="list">
+          <div class="item">Top 5% in Public Health Education (2024 midterms)</div>
+          <div class="item">Led a 1,200‑household malaria net distribution drive</div>
+          <div class="item">Dean’s Recognition for Community Service (2023)</div>
+        </div>
+        <h2 style="margin-top:16px">Portfolio</h2>
+        <div class="list">
+          <div class="item"><strong>Research Projects</strong><div><em>Assessing ANC Attendance in Unguwar Rimi</em> — Surveyed 250 mothers to identify barriers to antenatal clinic utilization. (May 2024)</div></div>
+          <div class="item"><strong>Volunteer Work</strong><div>Health Educator, <em>Kumbotso Primary Health Centre</em> (2023–2024)</div></div>
+          <div class="item"><strong>Certifications</strong><div>Basic Life Support (BLS), First Aid & CPR, Cold Chain & Vaccine Handling</div></div>
+          <div class="item"><strong>Practical Experience</strong><div>Clinical rotation — Maternal & Child Health (12 weeks), Immunization clinic assistant</div></div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div>Motto: <em>ILIMI HASKEN RAYUWA</em> • Contact: <a href="mailto:info@mamanhadee.com" style="color:#34d399">info@madarasatunnisa'i.com</a> • GSM: 07066144944, 08035458742</div>
+      <div style="margin-top:6px">© <span id="year"></span> Maman Hadee— Personal Page</div>
+    </footer>
   </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
-  </html>
+</html>
